@@ -7,96 +7,182 @@
     <title>A. A. Noman Ansary</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/me2016.jpg">
+    <link rel="shortcut icon" href="img/me.jpg">
+    <style>
+        nav a {
+            color: #fce7ff;
+            font-size: max(14px, 2vw);
+            text-decoration: none;
+            margin: 0px 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        table a {
+            color: #927197;
+            text-decoration: none;
+        }
+
+        table a:hover {
+            text-decoration: underline;
+        }
+
+        table a:visited {
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
-    
-    <section class="intro">
+    <nav>
+        <a href="#top">Home</a>
+        <a href="#education">Education</a>
+        <a href="#portfolio">Portfolio</a>
+    </nav>
 
+    <section id="intro">
+        <h1 style="font-size: max(20px,4vw); text-align: center; padding-top: 5%;">A. A. Noman <span>Ansary</span></h1>
         <div class="half-width-view">
-
-            <h1><span class="green-highlight">Showrav</span> Ansary</h1>
-
-            <h3>Algorithms Enthusiast</h3>
-
-            <p>There's a pretty much very good chance you have encountered me through a blog about algorithms.
-                Well, I am not a competitive programmer but surely I do problem solving. 
-                May be we can get in touch? 
-            </p>
-
-            <a class="links-clickme" target="_blank" href="https://www.linkedin.com/in/showrav-ansary/">
-                Get in Touch
-            </a>
+            <img src="img/me.jpg" alt="Picture of A. A. Noman Ansary">
         </div>
         <div class="half-width-view">
-            <img src="img/me2016.jpg" alt="my photo">
+            <p style="font-size: max(16px,2.5vw)">
+                Hi there! My name is A. A. Noman Ansary, from Rajshahi, Bangladesh. But I prefer to be called as
+                <b>Showrav</b>, my nick name.
+            </p>
+        </div>
+    </section>
+
+    <hr width="80%" color="#917FB3">
+
+    <section id="more-talk">
+        <div class="half-width-view">
+            <p>
+
+                Currently I am investing my time in working with <i>WebGL</i>, <i>ThreeJS</i>, and <i>BlockChain</i>.
+                <br> Previously I had been involved in Bengali <i>NLP</i> with <span>Bengali.ai</span> as a research
+                assistant.
+            </p>
+            <p>
+                I also maintain the <i>Editorials</i> contributed to <a href="https://lightoj.com/"
+                    target="_blank">LightOJ</a>, a Bangladesh originated online Data Structure and Algorithms problem
+                practicing platform. Want to <a href="https://github.com/lightoj-dev/problem-tutorials"
+                    target="_blank">contribute</a>? Help us enrich our editorials.
+            </p>
+        </div>
+
+
+        <div class="half-width-view">
+            <p>
+                <img src="https://media.licdn.com/dms/image/C4D22AQEJpzk39xizJA/feedshare-shrink_1280/0/1630074730365?e=1689206400&v=beta&t=fg8GO4aUvhBgJYq50W3Twp4SwFvw17qvB8RnXVJQM7U"
+                    alt="Me and my friends at Bangladesh Mathematical Olympiads national rounds">
+                While I prefer arts over programming or mathematics, I have been lucky enough to get medals at
+                <span>Bangladesh Mathematical Olympiads</span>. <br> Currently I am an external consultant to <a
+                    href="https://banglarmath.com/" target="_blank">Banglar Math</a>, an edutech focusing on rewritting
+                mathematics text-books of NCTB and providing training to both teachers and students.
+            </p>
         </div>
 
     </section>
 
 
-    <section class="dream-area">
-        <div class="half-width-view">
-            <img src="img/me2020.jpg" alt="my matured pic">
-        </div>
-        <div class="half-width-view">
-            
-            <h2>Big Dream</h2>
-
-            <h3>Become The Best Java Developer</h3>
-
-            <p>
-                I already know basics to multhreaded programming in Java. 
-                I am also learning SpringBoot.
-                But I know there's a long way to go. 
-                The dream is to learn more and become the best!
-            </p>
-            
-            <a class="links-clickme" target="_blank" href="https://github.com/showrav-ansary">GitHub</a>
+    <section id="education">
+        <div class="full-width-view">
+            <h2>Education</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Education Level</th>
+                        <th>Institution</th>
+                        <th>Passing Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Secondary School Certificate</td>
+                        <td><a href="https://rglhs.edu.bd/" target="_blank">Govt. Laboratory High School</a>, Rajshahi
+                        </td>
+                        <td>2015</td>
+                    </tr>
+                    <tr>
+                        <td>Higher Secondary School Certificate</td>
+                        <td><a href="http://rmscraj.edu.bd/" target="_blank">Govt. Rajshahi Model School and
+                                College</a>, Rajshahi</td>
+                        <td>2017</td>
+                    </tr>
+                    <tr>
+                        <td>Bachelor of Science in Computer Science</td>
+                        <td><a href="https://www.bracu.ac.bd/" target="_blank">BRAC University</a>, Dhaka</td>
+                        <td>2023</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
-    <section class="experience-area">
 
-        <h2>Experiences</h2>
-        
-        <div id="algorithm-enthusiast" class="half-width-view experience">
-            <h2>Algorithms Enthusiast</h2>
 
-            <h3 class="green-highlight">
-                2019 - Present 
-            </h3>
-            
-            <p>
-                I have been always been pro-active regarding learning new algorithms.
-                May be it came from my curiosity about mathematics.
-                Currently I happen to be an official <span class="green-highlight">Editorial Moderator</span>
-                at <a href="https://lightoj.com/home">Light OJ</a>.
-                Want to contribute <a href="https://github.com/lightoj-dev/problem-tutorials">Editorials</a>?
 
-            </p>
-        
+    <section id="portfolio">
+        <div class="full-width-view">
+            <h2>Portfolio</h2>
+            <div class="half-width-view">
+                <h3 style="color: aqua;">ThreeJS / WebGL</h3>
+                <ul style="list-style-type:disc;">
+                    <li>Galaxy Generator: <a href="https://github.com/showrav-ansary/GalaxyGenerator"
+                            target="_blank">Source</a> | <a href="https://galaxy-generator-showrav.vercel.app/">Demo</a>
+                    </li>
+                    <li>Fox Animation: <a href="https://github.com/showrav-ansary/FoxAnimation"
+                            target="_blank">Source</a> | <a
+                            href="https://fox-animation-showrav.vercel.app/#debug">Demo</a></li>
+                    <li>Raging Sea: <a href="https://github.com/showrav-ansary/RagingSea" target="_blank">Source</a> |
+                        <a href="https://raging-sea-showrav.vercel.app/">Demo</a></li>
+                </ul>
+            </div>
+            <div class="half-width-view">
+                <h3 style="color: rgb(60, 175, 146);">DSA</h3>
+                <ul style="list-style-type:disc;">
+                    <li><a href="https://github.com/showrav-ansary/FoxAnimation"
+                            target="_blank">Programing Contest: Data Structure and Algorithms by Md. Mahbubul Hassan Shanto </a></li>
+                    <li><a href="https://github.com/SongketLipi/Algorithms" target="_blank">SongketLipi</a> </li>
+                </ul>
+            </div>
+
         </div>
+    </section>
 
-
-        <div id="java-developer" class="half-width-view experience">
-            <h2>Back End Java Developer</h2>
-            <h3 class="green-highlight">2018 - Present</h3>
-
+    <section id="outro">
+        <div class="full-width-view">
             <p>
-                I have done a few projects academically and outside my academics using Jakarta stacks.
-                I do not have the required skills of a front-end engineer but I can definitely help with back-end.
-                My tech stack is Java, SpringBoot, MySQL/MS SQL Server and Apache Tomcat on a Linux server.
+                While I acknowledge that this page looks really <i>minimalistic</i>, as a student of theoretical fine
+                arts,
+                I would like to quote <span>Leonardo Da Vinci</span>: <br>
+                <q cite="https://www.thinkindependent.com.au/simplicity-ultimate-sophistication-leonardo-da-vinci/"
+                    style="font-size: max(18px, 3vw); color: #f0bff8;">
+                    Simplicity is the ultimate sophistication.
+                </q>
+            <p>
+                I would also like to acknowledge the inspiration I got from <a href="https://www.freecodecamp.org/"
+                    target="_blank">freeCodeCamp</a> for this minimalistic design.</p>
             </p>
         </div>
 
     </section>
 
-    
+    <section style="margin: 0;">
+        <footer>
+            <p>!© A. A. Noman <span class="green-highlight">Ansary</span></p>
+            <div id="result" class="footnote"></div>
+            <script>
+                var date = document.lastModified;
+                var lastModifiedDate = new Date(date);
+                document.getElementById("result").innerHTML = "Last Update : " + lastModifiedDate + "<br\> Discord Link: ";                
+            </script>
+        </footer>
+    </section>
 
-    <footer>
-        <p>!© A. A. Noman <span class="green-highlight">Ansary</span></p>
-    </footer>
 </body>
+
 </html>

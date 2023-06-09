@@ -1,156 +1,155 @@
-body{
-    margin:0;
-    padding:0;
-    height:100%;
+body {
+    background-color: #2A2F4F;
+    margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(6, 46, 48);
+    font-size: max(13px, 2vw);
+    color: #b6b6b6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-header{
+
+table {
+    font-size: max(14px, 2vw);
+    text-align: left;
+}
+
+th,
+td {
+    border-style: dashed;
+    padding: max(10px, 1vw);
+}
+
+th {
+    color: #bcadd8;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+nav {
     top: 0;
-    position: sticky;
-}
-nav{
-    padding-top: 5px;
-    color: orangered;
-    height: 40px;
+    display: block;
+    position: fixed;
+    background-color: rgba(113, 142, 236, 0.75);
+    padding: 10px;
     text-align: center;
-    background-color: rgba(10, 65, 68, 0.5);
+    margin-bottom: 5%;
+    width: 100%;
+    border-style:dashed;
+
 }
 
-footer{
-    background:rgba(10, 65, 68, 0.5);
-    width:100%;
-   
-    position:fixed;
-    bottom:0;
-    left:0;
+a {
+    color: #ac80ff;
 }
 
-h1{
-    color: rgb(103, 243, 243);
-    font-size: 50px;
-}
-
-h2{
-    font-size: 30px;
-    color: rgb(153, 245, 245);
-}
-h3{
-    color: rgb(240, 216, 187);
-}
-p{
-    color: white;
-}
-
-a{
-    color: burlywood;
-}
-a:visited{
-    color: orange;
-}
-
-section{
-    height: 500px;
-    padding-bottom: 150px;
-}
-
-#about{
-    background-color: rgb(13, 102, 107);;
-}
-
-footer p{
-    text-align: center;
-    color: orange;
-}
-
-footer img{
-    size: 5px;
-}
-
-footer{
-    background:rgba(10, 65, 68, 0.5);
-    width:100%;
-    height:50px;
-    position:fixed;
-    bottom:0;
-    left:0;
+a:visited {
+    text-decoration: none;
 }
 
 
 
-.green-highlight{
-    color: rgb(115, 255, 0);
+h1 {
+    color: #e0d0ff;
+    font-size: max(24px, 4vw);
 }
 
-.half-width-view{
+h2 {
+    color: coral;
+    font-size: max(20px, 3.5vw);
+}
+
+h3 {
+    font-size: max(18px, 2.75vw);
+}
+
+p {
+    overflow: auto;
+}
+
+i {
+    color: lightpink;
+}
+
+b {
+    color: cornflowerblue;
+}
+
+span {
+    color: darkorange;
+}
+
+section {
+    padding-top: 5%;
+    margin-top: 15%;
+    padding-bottom: min(30px, 10%);
+}
+
+#intro {
+    margin-top: 0%;
+}
+
+#more-talk {
+    margin-top: 0%;
+    padding: 2%;
+}
+
+#more-talk img {
+    padding-top: 0%;
+}
+
+.half-width-view {
+    display: block;
     width: 40%;
     float: right;
     margin-right: 5%;
     padding-right: 2%;
 }
 
-.half-width-view img{
+.full-width-view {
+    display: block;
     width: 90%;
+    float: right;
+    margin-right: 1%;
+    padding-right: 2%;
+}
+
+.half-width-view img {
+    padding-top: 0%;
+    width: 90%;
+}
+
+img {
     border-radius: 5px;
 }
 
-.half-width img{
+
+img {
     width: 100%;
 }
 
-.intro{
-    margin-top: 100px;
+footer {
+    margin: 0;
+    text-align: center;
 }
 
-.links-clickme{
+#outro {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin: 10%;
+    padding: 2%;
+    border-style: dashed;
+}
+
+#portfolio a{
     text-decoration: none;
-    background-image: linear-gradient(45deg, rgb(142, 180, 145), rgb(71, 255, 246));
-    padding: 5px 15px;
-    border-radius: 10px;
-    color: rgb(255, 251, 194);
-    font-weight: 700;
-}
-.dream-area{
-    background-image: url("img/dream-bg.png");
-    background-repeat: no-repeat;
-    background-position: right;
-}
-.experience{
-    box-shadow: 10px 10px 40px gray;
-    border-radius: 5px;
-    height: 80%;
-    background-color: white;
-}
-.experience-area{
-    padding-left: 10px;
-    background-image: url("img/exp-bg.png");
-    background-repeat: no-repeat;
-    background-position: left;
-}
-.experience-area h2{
-    margin-left: 5%;
-}
-#algorithm-enthusiast{
-    padding-left: 10px;
-    background-color: rgb(13, 102, 107);
-    color: bisque;
-    border-left: 10px solid;
-    border-image: linear-gradient(180deg, lightSalmon, tomato);
-    border-image-slice: 1;
 }
 
-#java-developer{
-    padding-left: 10px;
-    background-color: rgb(13, 102, 107);
-    color: bisque;
-    border-left: 10px solid;
-    border-image: linear-gradient(180deg, blue, cyan);
-    border-image-slice: 1;
-}
-
-.repo-card{
-    padding-left: 10px;
-    background-image: url("img/exp-bg.png");
-    background-repeat: no-repeat;
-    background-position: left;
+.footnote {
+    padding: 5%;
+    font-size: max(12px, .75vw);
 }
