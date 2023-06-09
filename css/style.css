@@ -153,3 +153,8 @@ footer {
     padding: 5%;
     font-size: max(12px, .75vw);
 }
+
+hr{
+    width: 80%;
+    color: #b6b6b6;
+}
