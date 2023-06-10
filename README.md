@@ -1,76 +1,53 @@
-## A. A. Noman Ansary ##
----
-Hi there! My name is __A. A. Noman Ansary__. But I prefer to be called as `Showrav`, my nick name. I am currently pursuing a BSc in CSE at BRAC University, Bangladesh. I am an open source enthusiast, especially about Linux kernel based OSs. However I consider myself a more of a painter than a coder, well, self proclaimed! I like to introduce myself as a bunny lover. In fact, I have a huge plan in my mind to create a bunny farm here in Bangladesh. The plan itself is secret, the implementation that is. Trust me, it is as complex like as simple as it sounds to be! I hope soon to be able to execute it soon in near future! I can't honestly say that I really love staring at the monitor and typing stuffs that make sense to a specific group of people, but it is what it is. I don't think an intro like this okay to fully say who am I in real. I have some development experience. I wish to learn more and become as skillful as possible within my limits. Happy coding! 
+[![MasterHead](https://images.squarespace-cdn.com/content/v1/56db8e5fcf80a1b2c9a51c8d/1506543949264-BJHGEVOIH7OH38ZMVO78/Electric-Lit-GIF-Alix-Farren.gif?format=1000w)](https://showrav-ansary.github.io)
+### About Me ###
 
-### Currently Engaged In ### 
-- Contributing Tutorials to [LightOJ](https://github.com/lightoj-dev/problem-tutorials "LightOJ"). 
+Hi there! My name is __A. A. Noman Ansary__. But I prefer to be called as `Showrav`, my nick name. I am just a generic CS major who wants to pursue fine arts in the long run.
+
+### Currently Engaged In ###
+
+- Contributing and Moderating Tutorials in [LightOJ](https://github.com/lightoj-dev/problem-tutorials "LightOJ").
 - Making My Own Solve of "[Programming Contest: Data Structure and Algorithm](https://github.com/showrav-ansary/Programming-Contest-Data-Structure-and-Algorithm-by-Md.-Mahbubul-Hasan "Programming Contest: Data Structure and Algorithm by Md. Mahbubul Hasan")".
+- Researching as a Research Assistant in [Bengali.ai](https://bengali.ai/ "Bengali.ai").
+- Writing a Bengali book on [`Haskell` Programming](https://github.com/showrav-ansary/Haskell-Programming-in-Bengali) including theories.
 
 ### Hobbies ###
-- Drawing : Human Figures. Abstract. 
+
+- Drawing : Human Figures. Abstract.
 - Listening to Music : Jazz. Blues.
 - Journaling : Personal Stuffs.
-- Problem Solving : LightOJ. CodeForces. Timus. UVa.
+- Problem Solving : Books.
 
 ### Achievements ###
+
 Here are few of my notable achievements :
+
 - Vice Chancellor's Certificate, BRAC University. (2019)
 - Sixth Place Holder, Junior Category, Rajshahi Regional, Bangladesh Physic Olympiad (BdPhO). (2013)
 - Second Runner Up, Junior Category, Rajshahi Regional, Bangladesh Mathematical Olympiad (BdMO). (2013)
 - Second Runner Up, Junior Category, Rajshahi Regional, Bangladesh Mathematical Olympiad (BdMO). (2010)
 - Runner Up, Primary Category, Rajshahi Regional, Bangladesh Mathematical Olympiad (BdMO). (2009)
 
-### Experience ###
-- Freelance Desktop App Developer. (2017 to Present)
-- Systems Engineer, EnvoSat, Royal IT ltd. (2018 to 2019)
-- CTO and Co-Founder, GuluMulu. (2020 - 2021)
-
 ### Volunteering ###
+
 - Bug Hunter, Bugzilla. (2017 to Present)
 - Tutorial Moderator, LightOJ. (2021 to Present)
+- Research Assistant, Bengali.ai. (2021 to Present)
+- Contributor, DataHaskell. (2021 to Present)
 
 ### Technology Stack ###
-- General Purpose / Back End : 
-   Bash <img src="https://github.com/tomchen/stack-icons/blob/master/logos/bash.svg" width="15" height="15">, C++ <img src="https://github.com/tomchen/stack-icons/blob/master/logos/c-plusplus.svg" width="15" height="15">, Python <img src="https://github.com/tomchen/stack-icons/blob/master/logos/python.svg" width="15" height="15">, Java <img src="https://github.com/tomchen/stack-icons/blob/master/logos/java.svg" width="15" height="15">
 
-- Databases : 
-   MySQL <img src="https://github.com/tomchen/stack-icons/blob/master/logos/mysql.svg" width="15" height="15">, MS SQL Server 
-  
-- Front End : 
-  HTML <img src="https://github.com/tomchen/stack-icons/blob/master/logos/html-5.svg" width="15" height="15">, Qt <img src="https://github.com/tomchen/stack-icons/blob/master/logos/qt.svg" width="15" height="15"> , XAML and XML
+<p align="left"> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a> <a href="https://www.blender.org/" target="_blank" rel="noreferrer"> <img src="https://download.blender.org/branding/community/blender_community_badge_white.svg" alt="blender" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.haskell.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Haskell-Logo.svg" alt="haskell" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer"> <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/> </a> <a href="https://redis.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg" alt="redis" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
 
-  
-- Server : 
-   Apache <img src="https://github.com/tomchen/stack-icons/blob/master/logos/apache.svg" width="15" height="15">
+<p align="center"><img src ="https://gpvc.arturio.dev/showrav-ansary"></p>
 
-- Operating System : 
-   Fedora <img src="https://github.com/tomchen/stack-icons/blob/master/logos/fedora.svg" width="15" height="15">
-  
-- Learning : 
-   CSS <img src="https://github.com/tomchen/stack-icons/blob/master/logos/css-3_official.svg" width="15" height="15">, JavaScript <img src="https://github.com/tomchen/stack-icons/blob/master/logos/javascript.svg" width="15" height="15">, Flutter <img src="https://github.com/tomchen/stack-icons/blob/master/logos/flutter.svg" width="15" height="15">
-  
-<!--
 Profile stats              |  Language Contribution
 :-------------------------:|:-------------------------:
-![showrav-ansary :: Profile Stats](https://github-readme-stats.vercel.app/api?username=showrav-ansary&show_icons=true&theme=dark) | ![showrav-ansary :: Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=showrav-ansary&langs_count=5&theme=tokyonight&layout=compact&hide=html)
--->
+[![Showrav's GitHub stats](https://github-readme-stats-sigma-five.vercel.app/api?username=showrav-ansary&show_icons=true&theme=radical&count_private=true)](https://github.com/showrav-ansary/github-readme-stats)| [![Showrav's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=showrav-ansary&theme=radical&layout=compact)](https://github.com/showrav-ansary/github-readme-stats)
+
 ## Contact ##
+
 <p align="center">
 <a href="mailto:showrav.ansary.bd@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Gmail-showrav.ansary.bd@gmail.com-red?style=flat&logo=gmail"></a>
-<a href="https://twitter.com/ansary_showrav"><img alt="Twitter" src="https://img.shields.io/badge/Twitter-A._A._Noman_Ansary-blue?style=flat&logo=twitter"></a>
+<a href="https://twitter.com/AnsaryShowrav"><img alt="Twitter" src="https://img.shields.io/badge/Twitter-A._A._Noman_Ansary-blue?style=flat&logo=twitter"></a>
 <a href="https://www.linkedin.com/in/showrav-ansary/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-A._A._Noman_Ansary-blue?style=flat&logo=linkedin"></a>
 </p>
-<!--
-**showrav-ansary/showrav-ansary** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
