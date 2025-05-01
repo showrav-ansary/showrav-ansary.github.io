@@ -9,7 +9,7 @@ import {
 } from '@react-three/drei';
 
 export default function Page() {
-	const computer = useGLTF('./assets/model.gltf');
+	const computer = useGLTF('/assets/model.gltf');
 
 	return (
 		<>
