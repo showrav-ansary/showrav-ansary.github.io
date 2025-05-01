@@ -78,8 +78,7 @@ const App = () => {
 				<div
 					className="overlay-text"
 					style={overlayTextStyle}>
-					Please rotate your mobile device to landscape mode. Or use a
-					Tablet/Desktop/Laptop. Regards, A. A. Noman Ansary.
+					Change orientation to landscape. 
 				</div>
 			</div>
 		);
