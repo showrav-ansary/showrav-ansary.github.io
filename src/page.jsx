@@ -62,6 +62,16 @@ export default function Page() {
 						color={'#718eec'}>
 						Ansary Showrav
 					</Text>
+					<Text
+						font="./ShareTechMono-Regular.woff"
+						fontSize={0.3}
+						position={[5, -2, 0.75]}
+						rotation-y={-1.25}
+						maxWidth={3}
+						color={'#718eec'}>
+						Please scroll and click on the links on the display of
+						the virtual laptop to see more.
+					</Text>
 				</Float>
 			</PresentationControls>
 
