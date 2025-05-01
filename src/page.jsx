@@ -39,8 +39,10 @@ export default function Page() {
 
 					<primitive
 						object={computer.scene}
-						position-y={-1.2}
-						rotation-x={0.13}>
+						position-y={-4}
+						position-x={1}
+						rotation-x={0.13}
+						scale={2}>
 						<Html
 							transform
 							wrapperClass="htmlScreen"
@@ -54,7 +56,7 @@ export default function Page() {
 					<Text
 						font="./ShareTechMono-Regular.woff"
 						fontSize={0.5}
-						position={[2, 0.75, 0.75]}
+						position={[2, 0.55, 0.75]}
 						rotation-y={-1.25}
 						maxWidth={2}
 						color={'#718eec'}>

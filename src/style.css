@@ -14,10 +14,35 @@ canvas {
 	touch-action: none;
 }
 
+.portrait-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	position: absolute; /* Ensure it overlays over the canvas */
+	z-index: 1; /* Ensure it stays above the canvas */
+	text-align: center;
+}
 .htmlScreen iframe {
 	width: 1024px;
 	height: 670px;
 	border: none;
 	border-radius: 20px;
 	background: #000000;
+}
+.overlay-text {
+	position: absolute; /* Position over the cube */
+	font-size: 10px;
+	text-align: left;
+	color: white;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+	z-index: 2; /* Ensure it's above the cube */
+}
+
+@media only screen and (orientation: landscape) {
+	.portrait-container {
+		display: none;
+	}
 }
