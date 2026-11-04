@@ -1,60 +1,63 @@
-import React, { Component, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { Component, Suspense, useEffect, useLayoutEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Environment, useGLTF } from '@react-three/drei';
+import { Canvas, useThree } from '@react-three/fiber';
+import { useGLTF } from '@react-three/drei';
 import { Cache } from 'three';
 import { DRACO_PATH, DRACO_WASM, DRACO_WRAPPER, ENVIRONMENT, FONT, MODEL } from './assets.js';
 import Page from './page.jsx';
 import './style.css';
 
-const PORTRAIT_QUERY = '(orientation: portrait)';
+// Responsive layout hook for mobile, tablets, and desktop
+function useResponsiveLayout() {
+	const [dimensions, setDimensions] = useState(() => ({
+		width: typeof window !== 'undefined' ? window.innerWidth : 1280,
+		height: typeof window !== 'undefined' ? window.innerHeight : 720,
+	}));
 
-const CAMERAS = {
-	landscape: [-1.8, 1.25, 4.7],
-	portrait: [6, 5, 8],
-};
+	useEffect(() => {
+		const handleResize = () => {
+			setDimensions({
+				width: window.innerWidth,
+				height: window.innerHeight,
+			});
+		};
+		window.addEventListener('resize', handleResize);
+		window.addEventListener('orientationchange', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+			window.removeEventListener('orientationchange', handleResize);
+		};
+	}, []);
 
-// Moves the shared camera when switching between the two scenes.
-function CameraRig({ position }) {
+	const aspect = dimensions.width / Math.max(1, dimensions.height);
+	// Mobile / tablet / narrow screen threshold
+	const isCompact = dimensions.width < 1080 || aspect < 1.35;
+
+	return { ...dimensions, aspect, isCompact };
+}
+
+// Adjusts the camera position & frustum smoothly for mobile, tablets, and desktop
+function CameraRig({ isCompact, aspect }) {
 	const camera = useThree((state) => state.camera);
+
 	useLayoutEffect(() => {
-		camera.position.set(...position);
-		camera.lookAt(0, 0, 0);
+		if (isCompact) {
+			// On mobile & tablets: center the laptop model.
+			// Distance scales inversely with aspect ratio so the entire laptop
+			// is framed with comfortable margins on any screen width.
+			const distance = Math.max(5.0, 5.2 / (0.8284 * Math.max(0.35, aspect)));
+			const targetY = aspect < 1 ? -0.85 : -0.3;
+			camera.position.set(0, targetY + 1.2, distance);
+			camera.lookAt(0, targetY, 0);
+		} else {
+			// On desktop: comfortable angled view with room for 3D typography
+			camera.position.set(-1.8, 1.25, 4.7);
+			camera.lookAt(0, 0, 0);
+		}
 		camera.updateProjectionMatrix();
-	}, [camera, position]);
+	}, [camera, isCompact, aspect]);
+
 	return null;
-}
-
-// Rotating 3D model shown in portrait orientation
-function RotatingModel() {
-	const { scene } = useGLTF(MODEL.url, DRACO_PATH);
-	const group = useRef();
-
-	// Rotate a wrapper group (never the shared GLTF scene itself), scaled by
-	// frame delta so the speed is identical on 60 Hz and 120 Hz displays.
-	useFrame((_, delta) => {
-		const g = group.current;
-		const step = delta * 60;
-		g.rotation.x += 0.002 * step;
-		g.rotation.y += 0.0025 * step;
-		g.rotation.z += 0.0015 * step;
-	});
-
-	return (
-		<group ref={group}>
-			<primitive object={scene} />
-		</group>
-	);
-}
-
-function PortraitScene() {
-	return (
-		<>
-			<color args={['#2A2F4F']} attach="background" />
-			<Environment files={ENVIRONMENT.url} />
-			<RotatingModel />
-		</>
-	);
 }
 
 // Fires once everything inside the surrounding <Suspense> has resolved:
@@ -85,47 +88,27 @@ class ErrorBoundary extends Component {
 	}
 }
 
-function usePortrait() {
-	const [isPortrait, setIsPortrait] = useState(
-		() => window.matchMedia(PORTRAIT_QUERY).matches
-	);
-	useEffect(() => {
-		const query = window.matchMedia(PORTRAIT_QUERY);
-		const onChange = (e) => setIsPortrait(e.matches);
-		query.addEventListener('change', onChange);
-		return () => query.removeEventListener('change', onChange);
-	}, []);
-	return isPortrait;
-}
-
 function App({ fontUrl, onReady }) {
-	const isPortrait = usePortrait();
+	const { isCompact, aspect } = useResponsiveLayout();
 
 	return (
-		<>
-			<Canvas
-				dpr={[1, 2]}
-				gl={{ powerPreference: 'high-performance' }}
-				camera={{
-					fov: 45,
-					near: 0.1,
-					far: 2000,
-					position: CAMERAS.landscape,
-				}}>
-				<ambientLight intensity={0.5} />
-				<pointLight position={[10, 10, 10]} />
-				<CameraRig position={isPortrait ? CAMERAS.portrait : CAMERAS.landscape} />
-				<Suspense fallback={null}>
-					{isPortrait ? <PortraitScene /> : <Page fontUrl={fontUrl} />}
-					<Ready onReady={onReady} />
-				</Suspense>
-			</Canvas>
-			{isPortrait && (
-				<div className="portrait-message" role="status">
-					Change orientation to landscape.
-				</div>
-			)}
-		</>
+		<Canvas
+			dpr={[1, 2]}
+			gl={{ powerPreference: 'high-performance' }}
+			camera={{
+				fov: 45,
+				near: 0.1,
+				far: 2000,
+				position: [-1.8, 1.25, 4.7],
+			}}>
+			<ambientLight intensity={0.5} />
+			<pointLight position={[10, 10, 10]} />
+			<CameraRig isCompact={isCompact} aspect={aspect} />
+			<Suspense fallback={null}>
+				<Page fontUrl={fontUrl} isCompact={isCompact} />
+				<Ready onReady={onReady} />
+			</Suspense>
+		</Canvas>
 	);
 }
 
