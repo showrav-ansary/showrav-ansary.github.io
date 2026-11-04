@@ -10,7 +10,7 @@ import './style.css';
 const PORTRAIT_QUERY = '(orientation: portrait)';
 
 const CAMERAS = {
-	landscape: [-3, 1.5, 4],
+	landscape: [-1.8, 1.25, 4.7],
 	portrait: [6, 5, 8],
 };
 
