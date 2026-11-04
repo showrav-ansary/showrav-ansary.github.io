@@ -8,6 +8,9 @@
 		"build": "vite build",
 		"deploy": "vercel --prod"
 	},
+	"engines": {
+		"node": "26.x"
+	},
 	"devDependencies": {
 		"@vitejs/plugin-react": "4.0",
 		"vercel": "^31.4.0",
