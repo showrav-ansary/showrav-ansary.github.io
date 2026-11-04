@@ -30,39 +30,36 @@ function useResponsiveLayout() {
 	}, []);
 
 	const aspect = dimensions.width / Math.max(1, dimensions.height);
-	// Mobile / tablet / narrow screen threshold
-	const isCompact = dimensions.width < 1080 || aspect < 1.35;
+	const isMobile = dimensions.width < 768 || aspect < 1.15;
 
-	return { ...dimensions, aspect, isCompact };
+	return { ...dimensions, aspect, isMobile };
 }
 
-// Adjusts the camera position & frustum smoothly for mobile, tablets, and desktop
-function CameraRig({ isCompact, aspect }) {
+// Adjusts camera position so the MacBook screen is always fully in the main view
+function CameraRig({ isMobile, aspect }) {
 	const camera = useThree((state) => state.camera);
 
 	useLayoutEffect(() => {
-		if (isCompact) {
-			// On mobile & tablets: center the laptop model.
-			// Distance scales inversely with aspect ratio so the entire laptop
-			// is framed with comfortable margins on any screen width.
-			const distance = Math.max(5.0, 5.2 / (0.8284 * Math.max(0.35, aspect)));
-			const targetY = aspect < 1 ? -0.85 : -0.3;
+		// Laptop is centered at x = 0, facing squarely forward.
+		// Camera looks directly at the MacBook screen so it is fully in the main view.
+		if (isMobile) {
+			// On narrow mobile screens, back up distance according to aspect ratio
+			const distance = Math.max(5.0, 4.8 / (0.8284 * Math.max(0.35, aspect)));
+			const targetY = -0.8;
 			camera.position.set(0, targetY + 1.2, distance);
 			camera.lookAt(0, targetY, 0);
 		} else {
-			// On desktop: comfortable angled view with room for 3D typography
-			camera.position.set(-1.8, 1.25, 4.7);
-			camera.lookAt(0, 0, 0);
+			// On desktop & tablets: straight-on main view of the MacBook screen
+			camera.position.set(0, 0.7, 5.2);
+			camera.lookAt(0, -0.1, 0);
 		}
 		camera.updateProjectionMatrix();
-	}, [camera, isCompact, aspect]);
+	}, [camera, isMobile, aspect]);
 
 	return null;
 }
 
 // Fires once everything inside the surrounding <Suspense> has resolved:
-// shaders are pre-compiled and a couple of frames are rendered before the
-// loading screen fades away, so the reveal is jank-free.
 function Ready({ onReady }) {
 	const { gl, scene, camera } = useThree();
 	useEffect(() => {
@@ -89,7 +86,7 @@ class ErrorBoundary extends Component {
 }
 
 function App({ fontUrl, onReady }) {
-	const { isCompact, aspect } = useResponsiveLayout();
+	const { isMobile, aspect } = useResponsiveLayout();
 
 	return (
 		<Canvas
@@ -99,24 +96,19 @@ function App({ fontUrl, onReady }) {
 				fov: 45,
 				near: 0.1,
 				far: 2000,
-				position: [-1.8, 1.25, 4.7],
+				position: [0, 0.45, 4.85],
 			}}>
 			<ambientLight intensity={0.5} />
 			<pointLight position={[10, 10, 10]} />
-			<CameraRig isCompact={isCompact} aspect={aspect} />
+			<CameraRig isMobile={isMobile} aspect={aspect} />
 			<Suspense fallback={null}>
-				<Page fontUrl={fontUrl} isCompact={isCompact} />
+				<Page fontUrl={fontUrl} isMobile={isMobile} />
 				<Ready onReady={onReady} />
 			</Suspense>
 		</Canvas>
 	);
 }
 
-/**
- * Mounts the 3D scene using assets that were already downloaded by the
- * loading screen. Files are served to three.js loaders from memory via
- * THREE.Cache, so no asset is requested twice.
- */
 export function mount(container, files, { onReady, onError }) {
 	Cache.enabled = true;
 	Cache.add(MODEL.url, files.get(MODEL.url));
@@ -124,12 +116,10 @@ export function mount(container, files, { onReady, onError }) {
 	Cache.add(DRACO_WASM.url, files.get(DRACO_WASM.url));
 	Cache.add(DRACO_WRAPPER.url, new TextDecoder().decode(files.get(DRACO_WRAPPER.url)));
 
-	// troika-three-text loads fonts itself, so hand it an in-memory URL.
 	const fontUrl = URL.createObjectURL(
 		new Blob([files.get(FONT.url)], { type: 'font/woff' })
 	);
 
-	// Start parsing / decoding the model right away.
 	useGLTF.preload(MODEL.url, DRACO_PATH);
 
 	ReactDOM.createRoot(container).render(
@@ -138,4 +128,3 @@ export function mount(container, files, { onReady, onError }) {
 		</ErrorBoundary>
 	);
 }
-

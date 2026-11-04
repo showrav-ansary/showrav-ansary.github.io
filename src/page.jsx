@@ -9,7 +9,7 @@ import {
 } from '@react-three/drei';
 import { DRACO_PATH, ENVIRONMENT, MODEL } from './assets.js';
 
-export default function Page({ fontUrl, isCompact = false }) {
+export default function Page({ fontUrl, isMobile = false }) {
 	const computer = useGLTF(MODEL.url, DRACO_PATH);
 
 	return (
@@ -23,12 +23,12 @@ export default function Page({ fontUrl, isCompact = false }) {
 
 			<PresentationControls
 				global
-				rotation={[0.13, isCompact ? 0 : 0.1, 0]}
-				polar={[-0.4, 0.2]}
-				azimuth={isCompact ? [-0.5, 0.5] : [-0.75, 0.75]}
+				rotation={[0.08, 0, 0]}
+				polar={[-0.35, 0.2]}
+				azimuth={[-0.6, 0.6]}
 				config={{ mass: 2, tension: 400 }}
 				snap={{ mass: 4, tension: 400 }}>
-				<Float rotationIntensity={isCompact ? 0.15 : 0.25}>
+				<Float rotationIntensity={0.2}>
 					<rectAreaLight
 						width={2.5}
 						height={1.65}
@@ -38,12 +38,11 @@ export default function Page({ fontUrl, isCompact = false }) {
 						position={[0, 0.55, -1.15]}
 					/>
 
-					{/* Transforms live on a wrapper group so the shared GLTF scene
-					    is never mutated. Centered on mobile/tablets, offset on desktop. */}
+					{/* MacBook Model — squarely centered so the screen is fully in the main view */}
 					<group
-						position={[isCompact ? 0 : -1.15, -3.9, 0]}
+						position={[0, -3.9, 0]}
 						rotation-x={0.13}
-						rotation-y={isCompact ? 0 : 0.03}
+						rotation-y={0}
 						scale={2}>
 						<primitive object={computer.scene} />
 						<Html
@@ -59,42 +58,18 @@ export default function Page({ fontUrl, isCompact = false }) {
 						</Html>
 					</group>
 
-					{/* Floating Typography — shown on desktop beside the model,
-					    hidden completely on mobile and tablets per user request */}
-					{!isCompact && (
-						<>
-							<Text
-								font={fontUrl}
-								anchorX="left"
-								fontSize={0.42}
-								position={[2.35, 0.85, -3.2]}
-								rotation-y={-0.38}
-								maxWidth={4.2}
-								color={'#818cf8'}>
-								Ansary Showrav
-							</Text>
-							<Text
-								font={fontUrl}
-								anchorX="left"
-								fontSize={0.21}
-								position={[2.35, 0.35, -3.2]}
-								rotation-y={-0.38}
-								maxWidth={4.2}
-								color={'#f7b267'}>
-								Data Scientist &amp; ML Engineer
-							</Text>
-							<Text
-								font={fontUrl}
-								anchorX="left"
-								fontSize={0.16}
-								position={[2.35, -0.10, -3.2]}
-								rotation-y={-0.38}
-								maxWidth={3.2}
-								lineHeight={1.45}
-								color={'#94a3b8'}>
-								Scroll and interact directly with the virtual laptop display. Click any demo to run 3D projects in-screen.
-							</Text>
-						</>
+					{/* Floating Typography — anchored in the background behind the laptop (z = -3.5),
+					    rising gracefully behind the top screen bezel. Hidden on mobile per user request. */}
+					{!isMobile && (
+						<Text
+							font={fontUrl}
+							anchorX="center"
+							anchorY="bottom"
+							fontSize={0.48}
+							position={[0, 1.25, -3.5]}
+							color={'#818cf8'}>
+							Ansary Showrav
+						</Text>
 					)}
 				</Float>
 			</PresentationControls>
