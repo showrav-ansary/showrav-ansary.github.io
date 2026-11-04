@@ -28,7 +28,23 @@ try {
 	writeFileSync(resolve('resume.pdf'), resumePdf);
 	writeFileSync(resolve('img/me.jpg'), meJpg);
 
-	execSync('git add index.html css/style.css resume.pdf img/me.jpg', { stdio: 'inherit' });
+	// Ensure package.json exists with engines: { node: "26.x" } for Vercel compatibility
+	const packageJson = JSON.stringify(
+		{
+			name: 'showrav-ansary-portfolio',
+			private: true,
+			version: '1.0.0',
+			description: 'Static portfolio for A. A. Noman Ansary',
+			engines: {
+				node: '26.x',
+			},
+		},
+		null,
+		2
+	) + '\n';
+	writeFileSync(resolve('package.json'), packageJson);
+
+	execSync('git add index.html css/style.css resume.pdf img/me.jpg package.json', { stdio: 'inherit' });
 	const diff = execSync('git status --porcelain', { encoding: 'utf8' }).trim();
 	if (diff) {
 		execSync('git commit -m "Auto-sync modern static site from main public/portfolio"', { stdio: 'inherit' });
