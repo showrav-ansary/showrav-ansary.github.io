@@ -23,6 +23,13 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+section[id],
+.hero,
+.section {
+    scroll-margin-top: 80px;
 }
 
 body {
@@ -84,9 +91,10 @@ nav {
     transition: all 0.2s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--text-main);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .nav-links a.resume-pill {
@@ -703,6 +711,14 @@ footer a:hover {
 
 /* Responsive */
 @media (max-width: 720px) {
+    html {
+        scroll-padding-top: 130px;
+    }
+    section[id],
+    .hero,
+    .section {
+        scroll-margin-top: 130px;
+    }
     .nav-container {
         flex-direction: column;
         gap: 12px;
