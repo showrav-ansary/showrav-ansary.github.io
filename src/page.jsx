@@ -7,9 +7,10 @@ import {
 	Environment,
 	useGLTF,
 } from '@react-three/drei';
+import { DRACO_PATH, ENVIRONMENT, MODEL } from './assets.js';
 
-export default function Page() {
-	const computer = useGLTF('/assets/model.gltf');
+export default function Page({ fontUrl }) {
+	const computer = useGLTF(MODEL.url, DRACO_PATH);
 
 	return (
 		<>
@@ -18,7 +19,7 @@ export default function Page() {
 				attach="background"
 			/>
 
-			<Environment preset="city" />
+			<Environment files={ENVIRONMENT.url} />
 
 			<PresentationControls
 				global
@@ -37,24 +38,28 @@ export default function Page() {
 						position={[0, 0.55, -1.15]}
 					/>
 
-					<primitive
-						object={computer.scene}
-						position-y={-4}
-						position-x={1}
+					{/* Transforms live on a wrapper group so the shared GLTF scene
+					    is never mutated (it is reused by the portrait view). */}
+					<group
+						position={[1, -4, 0]}
 						rotation-x={0.13}
 						scale={2}>
+						<primitive object={computer.scene} />
 						<Html
 							transform
 							wrapperClass="htmlScreen"
 							distanceFactor={1.17}
 							position={[0, 1.56, -1.4]}
 							rotation-x={-0.256}>
-							<iframe src="https://showrav-ansary.github.io/" />
+							<iframe
+								src="https://showrav-ansary.github.io/"
+								title="A. A. Noman Ansary — portfolio"
+							/>
 						</Html>
-					</primitive>
+					</group>
 
 					<Text
-						font="./ShareTechMono-Regular.woff"
+						font={fontUrl}
 						fontSize={0.5}
 						position={[2, 0.55, 0.75]}
 						rotation-y={-1.25}
@@ -63,7 +68,7 @@ export default function Page() {
 						Ansary Showrav
 					</Text>
 					<Text
-						font="./ShareTechMono-Regular.woff"
+						font={fontUrl}
 						fontSize={0.3}
 						position={[5, -2, 0.75]}
 						rotation-y={-1.25}
@@ -80,6 +85,7 @@ export default function Page() {
 				opacity={0.4}
 				scale={5}
 				blur={2.4}
+				resolution={256}
 			/>
 		</>
 	);

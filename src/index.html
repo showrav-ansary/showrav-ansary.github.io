@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/50090295?s=96&v=4">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of A. A. Noman Ansary (Showrav) — an interactive 3D laptop.">
+    <meta name="theme-color" content="#2A2F4F">
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/50090295?s=96&v=4">
     <title>A. A. Noman Ansary</title>
 </head>
 <body>
     <div id="root"></div>
-    <script type="module" src="./index.jsx"></script></body>
+
+    <div id="loader" class="loader" role="progressbar" aria-label="Loading assets" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="loader__panel">
+            <p class="loader__title">ansary showrav<span class="loader__caret">_</span></p>
+            <p class="loader__percent"><span id="loader-percent">0</span><small>%</small></p>
+            <div class="loader__bar"><div id="loader-fill" class="loader__fill"></div></div>
+            <p id="loader-bytes" class="loader__bytes">&nbsp;</p>
+            <ul id="loader-list" class="loader__list"></ul>
+            <p id="loader-status" class="loader__status">downloading assets…</p>
+            <button id="loader-retry" class="loader__retry" type="button" hidden>retry</button>
+        </div>
+        <noscript><p class="loader__status">Please enable JavaScript to view this site.</p></noscript>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+</body>
 </html>
