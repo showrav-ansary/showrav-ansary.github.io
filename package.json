@@ -1,0 +1,9 @@
+{
+  "name": "showrav-ansary-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static portfolio for A. A. Noman Ansary",
+  "engines": {
+    "node": "26.x"
+  }
+}
