@@ -1,6 +1,6 @@
 import { execSync } from 'child_process';
-import { readFileSync, writeFileSync } from 'fs';
-import { resolve } from 'path';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
+import { dirname, resolve } from 'path';
 
 console.log('🔄 Syncing public/portfolio to gh-page branch...');
 
@@ -19,6 +19,10 @@ try {
 	const resumePdf = readFileSync(resolve('public/portfolio/resume.pdf'));
 	const meJpg = readFileSync(resolve('public/portfolio/img/me.jpg'));
 
+	// Read optional .well-known/discord if present
+	const discordPath = resolve('.well-known/discord');
+	const discordContent = existsSync(discordPath) ? readFileSync(discordPath) : null;
+
 	// Switch to gh-page branch
 	execSync('git checkout gh-page', { stdio: 'inherit' });
 
@@ -27,6 +31,12 @@ try {
 	writeFileSync(resolve('css/style.css'), styleCss);
 	writeFileSync(resolve('resume.pdf'), resumePdf);
 	writeFileSync(resolve('img/me.jpg'), meJpg);
+
+	if (discordContent) {
+		const targetDiscordDir = resolve('.well-known');
+		if (!existsSync(targetDiscordDir)) mkdirSync(targetDiscordDir, { recursive: true });
+		writeFileSync(resolve('.well-known/discord'), discordContent);
+	}
 
 	// Ensure package.json exists with engines: { node: "26.x" } for Vercel compatibility
 	const packageJson = JSON.stringify(
@@ -44,7 +54,7 @@ try {
 	) + '\n';
 	writeFileSync(resolve('package.json'), packageJson);
 
-	execSync('git add index.html css/style.css resume.pdf img/me.jpg package.json', { stdio: 'inherit' });
+	execSync('git add index.html css/style.css resume.pdf img/me.jpg package.json' + (discordContent ? ' .well-known/discord' : ''), { stdio: 'inherit' });
 	const diff = execSync('git status --porcelain', { encoding: 'utf8' }).trim();
 	if (diff) {
 		execSync('git commit -m "Auto-sync modern static site from main public/portfolio"', { stdio: 'inherit' });
