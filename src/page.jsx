@@ -52,7 +52,7 @@ export default function Page({ fontUrl }) {
 							position={[0, 1.56, -1.4]}
 							rotation-x={-0.256}>
 							<iframe
-								src="https://showrav-ansary.github.io/"
+								src={`${import.meta.env.BASE_URL}portfolio/index.html`}
 								title="A. A. Noman Ansary — portfolio"
 							/>
 						</Html>

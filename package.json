@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
+		"sync:gh-page": "node scripts/sync-gh-page.mjs",
 		"deploy": "vercel --prod"
 	},
 	"engines": {
