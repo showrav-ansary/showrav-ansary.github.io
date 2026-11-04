@@ -48,3 +48,4 @@ export async function preloadAssets(assets, onProgress) {
 
 	return new Map(buffers);
 }
+

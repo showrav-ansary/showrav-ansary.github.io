@@ -21,3 +21,4 @@ export const DRACO_WASM = asset('draco/draco_decoder.wasm', 'mesh decoder (wasm)
 export const DRACO_PATH = BASE + 'draco/';
 
 export const ASSETS = [MODEL, ENVIRONMENT, DRACO_WASM, DRACO_WRAPPER, FONT];
+

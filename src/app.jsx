@@ -155,3 +155,4 @@ export function mount(container, files, { onReady, onError }) {
 		</ErrorBoundary>
 	);
 }
+
