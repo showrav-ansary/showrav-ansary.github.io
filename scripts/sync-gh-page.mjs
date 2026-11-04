@@ -31,6 +31,7 @@ try {
 	writeFileSync(resolve('css/style.css'), styleCss);
 	writeFileSync(resolve('resume.pdf'), resumePdf);
 	writeFileSync(resolve('img/me.jpg'), meJpg);
+	writeFileSync(resolve('.nojekyll'), '');
 
 	if (discordContent) {
 		const targetDiscordDir = resolve('.well-known');
@@ -54,7 +55,7 @@ try {
 	) + '\n';
 	writeFileSync(resolve('package.json'), packageJson);
 
-	execSync('git add index.html css/style.css resume.pdf img/me.jpg package.json' + (discordContent ? ' .well-known/discord' : ''), { stdio: 'inherit' });
+	execSync('git add index.html css/style.css resume.pdf img/me.jpg .nojekyll package.json' + (discordContent ? ' .well-known/discord' : ''), { stdio: 'inherit' });
 	const diff = execSync('git status --porcelain', { encoding: 'utf8' }).trim();
 	if (diff) {
 		execSync('git commit -m "Auto-sync modern static site from main public/portfolio"', { stdio: 'inherit' });
