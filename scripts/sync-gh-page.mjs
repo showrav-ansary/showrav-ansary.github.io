@@ -44,3 +44,4 @@ try {
 	console.error('❌ Sync failed:', error.message);
 	process.exit(1);
 }
+
